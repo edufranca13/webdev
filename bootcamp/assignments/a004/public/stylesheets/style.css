@@ -1,0 +1,11 @@
+h1 {
+  color: black;
+}
+
+i {
+  font-size: 2em;
+}
+
+#delete {
+  display: inline;
+}

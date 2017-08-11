@@ -1,0 +1,33 @@
+<% include partials/header %>
+
+<div class="container-fluid">
+	<div class="jumbotron">
+		<h1 class="display-3">Yelp Camp</h1>
+		<p class="lead">Technology helping nature</p>
+		<hr class="my-4">
+		<p>Start to appreciatte the best views and what nature can offer.</p>
+		<p class="lead">
+			<a class="btn btn-primary btn-lg" href="/new" role="button">Add New Campground</a>
+		</p>
+	</div>
+
+	<div class="ui items">
+		<% camps.forEach(function(e) { %>
+			<div class="item">
+				<a  href="/campground/<%= e._id %>" class="ui medium image">
+					<img src="<%= e.image %>">
+					<div class="extra"><div class="ui label blue">Show me more</div></div>
+				</a>
+				<div class="content">
+					<a class="header"><%= e.name %></a>
+					<div class="description">
+						<p><%= e.desc.substring(0,3000) %></p>
+					</div>
+				</div>
+			</div>
+			<% }) %>
+		</div>
+
+	</div>
+
+	<% include partials/footer %>

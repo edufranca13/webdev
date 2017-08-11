@@ -1,0 +1,64 @@
+<% include ../partials/header %>
+
+<div class="ui grid container">
+  <div class="row">
+    <div class="four wide column">
+      <div class="ui vertical menu">
+        <a class="item">
+          Inbox
+          <div class="ui left pointing label">1</div>
+        </a>
+        <a class="item">
+          Spam
+          <div class="ui label">51</div>
+        </a>
+        <a class="item">
+          Updates
+          <div class="ui label">1</div>
+        </a>
+      </div>
+    </div>
+    <div class="twelve wide column">
+      <div class="centered header huge ui">
+        <%= camp.name %>
+      </div>
+      <img class="ui fluid image" src="<%= camp.image %>">
+      <div class="ui divider"></div>
+      <div class="content">
+        <div class="description">
+          <p>
+            <%= camp.description %>
+          </p>
+        </div>
+      </div>
+      <div class="ui divider horizontal"></div>
+      <form action="/campground/<%= camp._id %>?_method=DELETE" method="POST">
+        <a class="ui button blue inverted" href="/campground/<%= camp._id %>/edit">Edit</a>
+        <button class="ui button red inverted" type="Submit">Delete</button>
+      </form>
+
+      <div class="ui comments">
+        <h3 class="ui dividing header">Comments</h3>
+        <% camp.comments.forEach(function(e) { %>
+          <div class="comment">
+            <a class="avatar">
+            </a>
+            <div class="content">
+              <a class="author"><%= e.author %></a>
+              <div class="metadata">
+                <span class="date"> <%= e.created %></span>
+              </div>
+              <div class="text">
+                <%= e.text %>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+          <div class="ui divider"></div>
+          <a class="button ui green" href="/campground/<%= camp._id %>/comment/new">Comment here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% include ../partials/footer %>

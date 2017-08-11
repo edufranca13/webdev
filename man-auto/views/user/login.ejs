@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+
+<div class="ui vertical masthead center aligned segment">
+
+	<div class="ui text container">
+		<div class="margin"></div>
+		<h2 class="ui header">Acesse sua conta <br> Man-auto</h2>
+		<div class="margin"></div>
+		<h3>Seus dados são pessoais e instraferíveis. Em caso de dúvida, favor contatar o gerente.</h3>
+	</div>
+
+	<div class="margin"></div>
+	<div class="ui divider"></div>
+	<div class="margin"></div>
+
+	<form class="ui form" action="/user/login" method="post">
+		<div class="fields ui one column stackable center aligned page grid">
+			<div class="field">
+				<label>Usuário</label>
+				<input type="text" name="username">
+			</div>
+
+			<div class="field">
+				<label>Senha</label>
+				<input type="password" name="password">
+			</div>
+		</div>
+
+		<div>
+			<button class="ui button" type="submit">Enviar</button>
+			<a href="/">
+				<button class="ui button" type="button">Cancelar</button>
+			</a>
+		</div>
+	</form>
+
+	<div class="margin"></div>
+</div> 
+</div>
+
+<% include ../partials/footer %>

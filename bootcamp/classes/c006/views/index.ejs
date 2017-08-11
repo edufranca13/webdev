@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+
+<div class="ui container segment">
+
+  <div class="ui items">
+    <% posts.forEach(function(e) { %>
+      <div class="item">
+        <div class="ui large image">
+          <img src="<%= e.image %>">
+        </div>
+        <div class="content">
+          <a class="header" href="/blog/<%= e._id %>"><%= e.title %></a>
+          <div class="meta">
+            <span> <%= e.created %></span>
+          </div>
+          <div class="description">
+            <p><%= e.description.substring(0, 200) %></p>
+          </div>
+          <div class="ui horizontal divider">
+
+          </div>
+          <a href="/blog/<%= e._id %>" class="button small blue inverted ui">Read More</a>
+        </div>
+      </div>
+      <div class="ui section divider"></div>
+      <% }) %>
+    </div>
+
+  </div>
+  <% include ./partials/footer %>

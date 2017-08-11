@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form Demo</title>
+</head>
+<body>
+	
+	<!-- 	action - where the form sends data to -->	
+	<!--  method - type of request (get or post) --> 
+	<!-- form is a block level element -->
+	<!-- the data is send along with the request -->
+	<!-- pay attetion to boolean attribute required -->
+	<!-- require won't let to send the data without the field filled -->
+	<form action="http://wikipedia.org" method="">
+		<label for="username">Usename:</label>
+		<input type="text" id="email" placeholder="username" required>
+		<label for="password">Password:</label>	
+		<input type="text" id="password" placeholder="password" required>
+		<input type="submit">
+	</form>
+
+</body>
+</html>

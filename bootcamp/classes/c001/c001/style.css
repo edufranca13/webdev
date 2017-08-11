@@ -1,0 +1,49 @@
+body {
+	background-image: url(image/Sports.png);
+}
+
+nav {
+	background-color: purple;
+}
+
+nav .logo {
+	display: inline-block;
+	margin: 2rem;
+	color: grey;
+}
+
+nav ul {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	display: inline-block;
+	margin: 1.2rem;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: lightslategray;
+	border: black 2px dashed;
+	padding: 1rem;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.first-section {
+	margin-top: 2rem;
+}
+
+
+
+
+@media (max-width: 416px) {
+
+	nav ul {
+		display: none;
+	}
+}

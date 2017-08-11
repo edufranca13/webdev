@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title></title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"></link>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.js"></script>
+		<script>
+$(document).ready(function(){
+	$(".hoverable").hover(function() {
+		$(".browse").toggleClass("visible");
+		$(".popup").toggleClass("visible");
+		$(".popup").toggleClass("hidden");
+
+	});
+
+});
+		</script>
+	</head>
+	<body>
+
+		<div class="ui menu">
+			<a class="browse item active hoverable">
+				Man-auto
+				<i class="dropdown icon"></i>
+			</a>
+			<div class="right menu">
+				<a class="item" href="/user/register">
+					<% if (user) {%>
+					<%= user.username %>
+					<% } else { %>
+					Registre-se</a>
+				<% } %>
+				<a class="item" href="/user/login">Acesse</a>
+				<a class="item" href="/user/logout">Sair</a>
+			</div>
+		</div>
+		<div class="ui fluid popup bottom left transition hidden hoverable">
+			<div class="ui four column relaxed equal height divided grid">
+				<div class="column">
+					<h4 class="ui header">Ordem de Serviço</h4>
+					<div class="ui link list">
+						<a class="item" href="/os/new">Criar OS</a>
+						<a class="item" href="/os">Verificar OS</a>
+						<a class="item" href="/os/edit">Editar OS</a>
+						<a class="item" href="/os/archive">Arquivar OS</a>
+					</div>
+				</div>
+				<div class="column">
+					<h4 class="ui header">Size</h4>
+					<div class="ui link list">
+						<a class="item">Small</a>
+						<a class="item">Medium</a>
+						<a class="item">Large</a>
+						<a class="item">Plus Sizes</a>
+					</div>
+				</div>
+				<div class="column">
+					<h4 class="ui header">Colored</h4>
+					<div class="ui link list">
+						<a class="item">Neutrals</a>
+						<a class="item">Brights</a>
+						<a class="item">Pastels</a>
+					</div>
+				</div>
+				<div class="column">
+					<h4 class="ui header">Types</h4>
+					<div class="ui link list">
+						<a class="item">Knitwear</a>
+						<a class="item">Outerwear</a>
+						<a class="item">Pants</a>
+						<a class="item">Shoes</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="pusher">

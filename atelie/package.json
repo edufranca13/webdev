@@ -1,0 +1,26 @@
+{
+  "name": "atelie_miti",
+  "version": "1.0.0",
+  "description": "Website do Atelie Miti",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "connect-flash": "^0.1.1",
+    "csurf": "^1.9.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-session": "^1.15.3",
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.6",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo Hashimoto",
+  "license": "ISC"
+}

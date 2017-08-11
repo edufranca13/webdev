@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.10.3/paper-full.min.js"></script>
+	<script type="text/paperscript" canvas="myCanvas">
+
+		var points = 25;
+
+		var length = 35;
+
+		var path = new Path({
+		strokeColor: '#E4141B',
+		strokeWidth: 20,
+		strokeCap: 'round'
+	});
+
+	var start = view.center / [10, 1];
+	for (var i = 0; i < points; i++)
+	path.add(start + new Point(i * length, 0));
+
+	function onMouseMove(event) {
+	path.firstSegment.point = event.point;
+	for (var i = 0; i < points - 1; i++) {
+	var segment = path.segments[i];
+	var nextSegment = segment.next;
+	var vector = segment.point - nextSegment.point;
+	vector.length = length;
+	nextSegment.point = segment.point - vector;
+}
+path.smooth({ type: 'continuous' });
+}
+
+function onMouseDown(event) {
+path.fullySelected = true;
+path.strokeColor = '#e08285';
+}
+
+function onMouseUp(event) {
+path.fullySelected = false;
+path.strokeColor = '#e4141b';
+}	
+
+</script>	
+</head>
+
+<body>
+
+	<canvas id="myCanvas" resize></canvas>
+	
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</html>

@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+
+<div class="ui container">
+  <div class="ui three column doubling stackable grid container">
+      <% camps.forEach(function (e) { %>
+        <div class="column">
+          <h1 class="ui header centered huge"><%= e.name %> </h1>
+          <img src="<%= e.image %>" alt="" class="medium image ui centered">
+          <div class="ui divider horizontal"></div>
+          <p> <%= e.description %></p>
+          <div class="extra"><div class="ui label large basic primary">
+            <a href="/campground/<%= e._id %>">Read More</a>
+          </div></div>
+        </div>
+        <% })  %>
+      </div>
+  </div>
+
+<% include ../partials/footer %>

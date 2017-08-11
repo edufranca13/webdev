@@ -1,0 +1,17 @@
+img {
+	width: 30%;
+	float: left;
+	margin: 1.66%;
+}
+
+h1 {
+	margin-left: 1.66%;
+	text-transform: uppercase;
+	font-size: 2.5em;
+	font-weight: bold;
+	margin-top: 0.81em;
+	border-bottom: solid 2px red;
+	width: 30%;
+	font-family: 'Open Sans Condensed', sans-serif;
+	padding-bottom: 0.2em;
+}

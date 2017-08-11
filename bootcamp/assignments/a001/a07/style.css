@@ -1,0 +1,22 @@
+.navbar {
+	padding: 0.3rem 7rem;
+	margin-bottom: 1rem;
+	background-color: Navy;
+}
+
+
+.jumbotron {
+	padding-left: 4rem;
+	margin-top: 4rem;
+	background-color: LightSkyBlue;
+}
+
+.imgm {
+	margin-bottom: 1.7rem;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+

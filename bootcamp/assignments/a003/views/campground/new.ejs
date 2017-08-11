@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+
+<div class="ui container">
+  <form action="/campground" method="post" class="ui form">
+    <div class="field">
+      <label>Name of the Campground</label>
+      <input type="text" name="camp[name]" placeholder="Name.">
+    </div>
+    <div class="field">
+      <label>Image</label>
+      <input type="text" name="camp[image]" placeholder="Image link">
+    </div>
+    <div class="field">
+      <textarea name="camp[description]" rows="8" cols="80"></textarea>
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</div>
+
+<% include ../partials/footer %>

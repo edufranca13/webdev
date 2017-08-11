@@ -1,0 +1,20 @@
+body {
+	background-color: orange;
+}
+
+ul {
+	color: purple;
+}
+li {
+	border: 2px solid red;
+}
+
+.special {
+	background-color: white
+}
+
+#sp {
+	background-color: blue;
+}
+
+

@@ -1,0 +1,58 @@
+<% include ../partials/header %>
+
+<div class="ui main container">
+  <div class="ui items">
+    <div class="item">
+      <div class="ui large image">
+        <img src="<%= product.image %>" alt="">
+      </div>
+      <div class="content">
+        <div class="header"><%= product.name %></div>
+        <div class="description">
+          <p>Os produtos do Atelie Miti são feitos manualmente com materiais selecionados em conjunto pela artesã e pelo consumidor. Assim, o cliente pode escolher um produto personalizado, que se adeque a suas necessidades e seus gostos.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus odio, beatae eius error vero eveniet quisquam reprehenderit, reiciendis consequatur unde! Odit obcaecati qui fugit illo veritatis iusto accusamus saepe tempora?</p>
+        </div>
+        <div class="ui divider horizontal"></div>
+        <div class="meta">Preço</div>
+        <div class="huge header"> R$ <%= product.price.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") %></div>
+      </div>
+    </div>
+
+    <div class="ui comments">
+      <h3 class="ui dividing header">Comentários</h3>
+      <% product.comments.forEach(function(e) { %>
+      <div class="comment">
+        <a class="avatar">
+        </a>
+        <div class="content">
+          <a class="author"><%= e.author %></a>
+          <div class="metadata">
+            <span class="date"><%= e.created %></span>
+          </div>
+          <div class="text"><%= e.text %></div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+      <form class="ui reply form" method="POST" action="/miti/<%= product._id %>/comment">
+        <div class="field" name="comment[author]" placeholder="Seu nome">
+          <label for="">Nome</label>
+          <input name="comment[author]" placeholder="Seu nome" type="text">
+        </div>
+        <div class="field">
+          <label for="">Deixe seu comentário</label>
+          <textarea name="comment[text]"></textarea>
+        </div>
+        <button type="submit" class="ui blue labeled submit icon button">
+          <i class="icon edit"></i> Comentário
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+<% include ../partials/footer %>

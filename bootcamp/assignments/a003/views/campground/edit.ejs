@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+
+<div class="ui container">
+  <form action="/campground/<%= camp._id %>?_method=PUT" method="POST" class="ui form">
+    <div class="field">
+      <label><%= camp.name %></label>
+      <input type="text" name="camp[name]" value="<%= camp.name %>">
+    </div>
+    <div class="field">
+      <label>Image Link</label>
+      <input type="text" name="camp[image]" value="<%= camp.image %>">
+    </div>
+    <div class="field">
+      <textarea name="camp[description]" rows="8" cols="80"><%= camp.description %></textarea>
+    </div>
+    <button class="ui button" type="submit">Update</button>
+  </form>
+</div>
+
+<% include ../partials/footer %>

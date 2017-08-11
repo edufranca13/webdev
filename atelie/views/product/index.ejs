@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="container">
+
+	<ul class="nav justify-content-center">
+		<li class="nav-item"><a href="#" class="nav-link">Bolinho</a></li>
+		<li class="nav-item"><a href="" class="nav-link">Brigadeiro</a></li>
+		<li class="nav-item"><a href="" class="nav-link">Suco Verde</a></li>
+		<li class="nav-item"><a href="" class="nav-link">Tapioca</a></li>
+	</ul>
+</div>
+
+<div class="row">
+	<% for (var i = 0; i < products.length; i++) { %>
+		<div class="col-sm-6 col-md-4">
+			<div class="card">
+				<a href="/miti/<%= products[i]._id %>"><img class="card-img-top" src="<%= products[i].image %>" alt="Card image top"></a>
+				<div class="card-block">
+					<h3 class="card-title"><%= products[i].name %></h3>
+					<p class="card-text">R$ <%= products[i].price %><br> <span>ou 3 x R$ <%= (products[i].price/3).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g) %></span></p>
+				</div>
+			</div>
+		</div>
+		<% } %>
+	</div>
+</div>
+
+<% include ../partials/footer %>

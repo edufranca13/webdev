@@ -1,0 +1,16 @@
+h1 {
+	font-family: "Impact";
+	font-size: 10em;
+}
+
+p {
+	font-family: "Helvetica";
+	font-weight: 800;	
+	line-height: 1;
+	text-align: center;
+	text-decoration: underline;
+}
+
+span {
+	font-size: 2em;
+}

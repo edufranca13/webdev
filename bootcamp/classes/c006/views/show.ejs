@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+
+<div class="ui container segment">
+  <a>
+    <img class="ui fluid centered image large"src="<%= post.image %>">
+  </a>
+  <div class="content">
+    <a class="header"><%= post.title %></a>
+    <div class="description">
+      <p><%= post.description %></p>
+    </div>
+    <div class="meta">
+      <p><%= post.created %></p>
+    </div>
+  </div>
+</div>
+
+
+<form action="/blog/<%= post._id %>?_method=DELETE" method="POST">
+  <a class="ui button inverted blue" href="/blog/<%= post._id %>/edit">Edit</a>
+  <button class="ui button inverted red" type="submit">Delete</button>
+</form>
+
+<% include ./partials/footer %>

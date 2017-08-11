@@ -1,0 +1,76 @@
+<% include partials/header %>
+
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">			<form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="text" placeholder="Pesquisa">
+		</form>
+		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
+		</ul>
+		<ul class="navbar-nav">
+			<li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">Entrar</a></li>
+			<li class="nav-item"><a href="#" class="nav-link"></span><i class="fa fa-user" aria-hidden="true"></i> Minha Conta</a></li>
+			<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Minha Cestinha</a></li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="display-3">Atelie Miti</h1>
+	</div>
+
+	<ul class="nav justify-content-center">
+		<li class="nav-item"><a href="#" class="nav-link">Bolinho</a></li>
+		<li class="nav-item"><a href="" class="nav-link">Brigadeiro</a></li>
+		<li class="nav-item"><a href="" class="nav-link">Suco Verde</a></li>
+		<li class="nav-item"><a href="" class="nav-link">Tapioca</a></li>
+	</ul>
+</div>
+
+<div class="container">
+	
+	<div class="row">
+
+		<% for (var i = 0; i < products.length; i++) { %>
+			<div class="col-sm-6 col-md-4">
+				<div class="card">
+					<a href="/imgs/<%= products[i].id %>"><img class="card-img-top" src="<%= products[i].image %>" alt="Card image top"></a>
+					<div class="card-block">
+						<h3 class="card-title"><%= products[i].name %></h3>
+						<p class="card-text">R$ <%= products[i].price %><br> <span>ou 3 x R$ 15,00</span></p>
+					</div>
+				</div>
+			</div>
+		<% } %>
+	
+	</div>
+
+</div>
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded sticky-bottom">
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand" href="#">Navbar</a>
+	
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		<ul class="navbar-nav mr-auto mt-2 mt-md-0">
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Link</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="#">Disabled</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<% include partials/footer %>

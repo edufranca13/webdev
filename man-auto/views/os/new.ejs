@@ -1,0 +1,54 @@
+<% include ../partials/header %>
+
+
+<div class="ui container">
+
+	<form class="ui form" action="/os" method="post">
+		<h4 class="ui dividing header"> Informações do Cliente</h4>
+		<div class="field">
+			<label>Nome do cliente</label>
+			<div class="two fields">
+				<div class="field">
+					<input type="text" name="cliente[nome]" placeholder="Nome">
+				</div>
+				<div class="field">
+					<input type="text" name="cliente[sobrenome]" placeholder="Sobrenome">
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<label>Endereço<label>
+					<div class="fields">
+						<div class="sixteen wide field">
+							<input type="text" name="cliente[endereco]" placeholder="Endereço">
+						</div>
+					</div>
+		</div>
+		<h4 class="ui dividing header">Informações do Veículo</h4>
+		<div class="field">
+			<div class="two fields">
+				<div class="field">
+					<label>Modelo</label>
+					<input type="text" name="veiculo[modelo]" placeholder="Modelo">
+				</div>
+				<div class="field">
+					<label>Placa</label>
+					<input type="text" name="veiculo[placa]" placeholde="Placa">
+				</div>
+			</div>
+			<h4 class="ui dividing header">Problema do Veículo</h4>
+			<div class="field">
+				<textarea name="veiculo[problema]"></textarea>
+			</div>
+			<div class="field">
+				<label>Numero da Ordem de Serviço</label>
+				<input name="os[numero]">
+			</div>
+			<button type="submit">Criar Nova Ordem de Serviço</button>
+	</form>
+		</div>
+</div>
+
+<div class="margin"></div>
+
+<% include ../partials/footer %>

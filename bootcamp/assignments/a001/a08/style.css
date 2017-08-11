@@ -1,0 +1,61 @@
+body {
+	font-family: 'Catamaran', sans-serif;
+	background-color: #F7F7F7
+}
+
+.navbar {
+	color: #9099a2;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+#brand {
+	color: #9099a2;
+}
+
+.navbar-nav .nav-link {
+	padding-left: 1rem;
+}
+
+.active a {
+	background-color: lightgrey;
+	height: 100%;
+}
+
+.jumbotron {
+	text-align: center;
+	background-image: url("1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100vh;
+	color: white;
+}
+
+.display-3, .lead {
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				0px 8px 13px rgba(1,0,0,0.1),
+				0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.vertical-center {
+	display: flex;
+	align-items: center;
+}
+
+.btn {
+	background-color: rgba(186,191,198, 0.7);
+	border-color: black;
+}
+
+.btn-default {
+	color: black;
+}
+
+hr {
+	width: 40%;
+	color: white;
+	background-color: white;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
