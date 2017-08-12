@@ -109,6 +109,18 @@ app.post("/register", function(req, res) {
 	});
 });
 
+app.get("/login", function(req, res) {
+	res.render("./user/login");
+});
+
+app.post("/login", passport.authenticate("local", 
+	{
+		successRedirect: "/campground",
+		failureRedirect: "/login",
+	}), function(req, res) {
+	res.send("Hello");
+});
+
 app.listen(3000, function() {
 	console.log("Server is on.");
 });
