@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+<div class="ui container grid centered">
+  <div class="row">
+  <div class="column six wide">
+  <h1 class="ui header huge centered">Entrar na conta</h1>
+  <% if (hasErrors) { %>
+    <div> <% messages.forEach(function(e) { %>
+      <%= e %>
+    <% }) %> </div>
+  <% } %>
+  <form class="ui form" action="/user/signin" method="post">
+    <div class="field">
+      <label for="email">E-mail</label>
+      <input type="text" name="email" id="email" class="ui input">
+    </div>
+    <div class="field">
+      <label for="password">Senha</label>
+      <input type="password" name="password" id="password" class="ui input">
+    </div>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button type="submit" class="ui button">Entre</button>
+  </form>
+</div>
+  </div>
+  </div>
+<% include ../partials/footer %>

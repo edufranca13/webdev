@@ -93,6 +93,38 @@ app.delete("/campground/:id", function(req, res) {
 	});
 });
 
+app.get("/campground/:id/comment/new", function(req, res){
+	Camp.findById(req.params.id, function(err, camp){
+		if (err) {
+			console.log(err);
+		}
+		else {
+			res.render("comment/new", {camp: camp});
+		}
+	})
+})
+
+app.post("/campground/:id/comments", function(req,res){
+	Camp.findById(req.params.id, function(err, campground){
+		if (err) {
+			console.log(err);
+			res.redirect('/');
+		}
+		else {
+			Comment.create(req.body.comment, function(err, comment) {
+				if (err) {
+					console.log(err);
+				}
+				else {
+					campground.comments.push(comment);
+					campground.save();
+					res.redirect('/campground' + campground._id);
+				}
+			});
+		}
+	});
+});
+
 app.get("/register", function(req,res){
 	res.render("./user/register");
 });
@@ -114,10 +146,10 @@ app.get("/login", function(req, res) {
 });
 
 app.post("/login", passport.authenticate("local", 
-	{
-		successRedirect: "/campground",
-		failureRedirect: "/login",
-	}), function(req, res) {
+			{
+				successRedirect: "/campground",
+				failureRedirect: "/login",
+			}), function(req, res) {
 	res.send("Hello");
 });
 
@@ -125,6 +157,13 @@ app.get('/logout', function(req, res) {
 	req.logout();
 	res.redirect('/');
 });
+
+function isLoggedIn(req, res, next) {
+	if (req.isAuthenticated()){
+		return next();
+	}
+	res.redirect('/login');
+}
 
 app.listen(3000, function() {
 	console.log("Server is on.");
