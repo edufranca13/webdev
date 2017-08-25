@@ -121,6 +121,11 @@ app.post("/login", passport.authenticate("local",
 	res.send("Hello");
 });
 
+app.get('/logout', function(req, res) {
+	req.logout();
+	res.redirect('/');
+});
+
 app.listen(3000, function() {
 	console.log("Server is on.");
 });
